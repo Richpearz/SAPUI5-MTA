@@ -1,9 +1,48 @@
 <mvc:View controllerName="richpearz.projectfioriexp.controller.App"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
     xmlns="sap.m">
     <Shell>
-        <Page id="page" title="{i18n>title}">
-            <content />
-        </Page>
+        <App>
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <content>
+
+                        <HBox >
+
+                            <Label id="labelEmployee"
+                                    class="sapUiSmallMargin"
+                                    text="{i18n>labelEmployee}" /> 
+
+                            <Input id="inputEmployee"
+                                    class="sapUiSmallMargin"
+                                    maxLength="6"
+                                    liveChange = "onValidate"
+                                    width="200px" />
+
+                            <Label id="labelCountry"
+                                    visible="false"
+                                    class="sapUiSmallMargin"
+                                    text="{i18n>labelCountry}" /> 
+
+                            <Select id="selectCountry"
+                                    visible="false"
+                                    class="sapUiSmallMargin">
+
+                                <items>
+                                    <core:Item key="US" text="{i18n>countryUS}"/>
+                                    <core:Item key="UK" text="{i18n>countryUK}"/>
+                                    <core:Item key="ES" text="{i18n>countryES}"/>
+                                </items>
+
+                            </Select>
+
+                        </HBox>
+
+                    </content>
+                </Page>
+            </pages>
+        </App>
     </Shell>
 </mvc:View>
