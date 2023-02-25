@@ -19,24 +19,88 @@
                                     class="sapUiSmallMargin"
                                     maxLength="6"
                                     liveChange = "onValidate"
-                                    width="200px" />
+                                    width="200px"
+                                    value="{richpearzEmployee>/employeeId}" />
 
                             <Label id="labelCountry"
-                                    visible="false"
+                                    visible="true"
                                     class="sapUiSmallMargin"
                                     text="{i18n>labelCountry}" /> 
 
                             <Select id="selectCountry"
-                                    visible="false"
+                                    items="{richpearzEmployee>/listCountry}"
+                                    selectedKey="{richpearzEmployee>/countryKey}"
+                                    visible="true"
+                                    forceSelection="false"
                                     class="sapUiSmallMargin">
 
                                 <items>
-                                    <core:Item key="US" text="{i18n>countryUS}"/>
-                                    <core:Item key="UK" text="{i18n>countryUK}"/>
-                                    <core:Item key="ES" text="{i18n>countryES}"/>
+                                    <core:Item key="{richpearzEmployee>key}" text="{richpearzEmployee>text}"/>
                                 </items>
 
                             </Select>
+
+                            <Button id="btnFilter"
+                                    class="sapUiSmallEndMargin"
+                                    icon="sap-icon://search"
+                                    press="onFilter"/>
+
+                            <Button id="btnClear"
+                                    class="sapUiSmallEndMargin"
+                                    icon="sap-icon://clear-filter"
+                                    press="onClearFilter"/>
+
+                        </HBox>
+
+                        <HBox >
+
+                            <Panel>
+
+                                <content>
+                                
+                                    <Table id="tableEmployee"
+                                            items="{richpearzEmployee>/Employees}"
+                                            headerText="Employees: ({richpearzEmployee>/Amount})">
+                                    
+                                        <columns>
+
+                                            <Column >                                            
+                                                <Text text="{i18n>tableId}"></Text>                                            
+                                            </Column>
+
+                                            <Column >                                            
+                                                <Text text="{i18n>tableName}"></Text>
+                                            </Column>
+
+                                            <Column >                                            
+                                                <Text text="{i18n>tableCountry}"></Text>                                            
+                                            </Column>
+
+                                            <Column >                                            
+                                                <Text text="{i18n>tableCity}"></Text>                                            
+                                            </Column>
+                                        
+                                        </columns>
+
+                                        <items>
+                                            <ColumnListItem press="onMessage"
+                                                            type="Active">
+                                                <cells>
+                                                    <ObjectIdentifier title="{richpearzEmployee>EmployeeID}" />
+                                                    <Text text="{richpearzEmployee>FirstName} {richpearzEmployee>LastName}"></Text>
+                                                    <Text text="{richpearzEmployee>Country}"></Text>
+                                                    <Text text="{richpearzEmployee>City}"></Text>
+                                                </cells>
+                                            
+                                            </ColumnListItem>
+                                        
+                                        </items>
+
+                                    </Table>
+                                
+                                </content>
+
+                            </Panel>
 
                         </HBox>
 

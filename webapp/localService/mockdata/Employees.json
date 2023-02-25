@@ -1,0 +1,68 @@
+{
+    "employeeId" : "",
+    "countryKey" : "",
+    "Amount" : 2,
+    "listCountry" : [
+        {
+            "key" : "US",
+            "text" : "United States"
+        },
+
+        {
+            "key" : "UK",
+            "text" : "United Kingdom"
+        },
+
+        {
+            "key" : "ES",
+            "text" : "Spain"
+        },
+
+        {
+            "key" : "MX",
+            "text" : "Mexico"
+        }
+    ],
+    "Employees": [
+        {
+            "EmployeeID" : "1",
+            "LastName" : "Garcia Lopez",
+            "FirstName" : "Maria",
+            "Country" : "ES",
+            "City" : "Madrid",
+            "PostalCode" : "28202",
+            "Orders" : [
+                {
+                    "OrderID" : "208",
+                    "Freight" : "65",
+                    "ShipAddress" : "Calle Alcala"                 
+                },
+                {
+                    "OrderID" : "2096",
+                    "Freight" : "21",
+                    "ShipAddress" : "Calle Mayor"  
+                }
+            ]
+        },
+        {
+            "EmployeeID" : "2",
+            "LastName" : "Fernandez Garcia",
+            "FirstName" : "Pedro",
+            "Country" : "ES",
+            "City" : "Granada",
+            "PostalCode" : "18008",
+            "Orders" : [
+                {
+                    "OrderID" : "1056",
+                    "Freight" : "78",
+                    "ShipAddress" : "Calle Alcala"                 
+                },
+                {
+                    "OrderID" : "6731",
+                    "Freight" : "90",
+                    "ShipAddress" : "Calle Mayor"  
+                }
+            ]
+        }
+    ]
+}
